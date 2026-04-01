@@ -1,9 +1,9 @@
 {
-  "name": "@hwc/ui",
+  "name": "@mfalana/ui",
   "private": true,
   "version": "0.0.1",
   "type": "module",
-  "description": "Reusable UI primitives for HWC applications",
+  "description": "Reusable UI primitives",
   "exports": {
     ".": "./src/index.js",
     "./SearchBar": "./src/SearchBar/SearchBar.jsx",
