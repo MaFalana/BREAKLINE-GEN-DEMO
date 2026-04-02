@@ -1,0 +1,16 @@
+{
+  "routes": [
+    {
+      "route": "/demo/breakline-gen",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/demo/breakline-gen/",
+      "rewrite": "/index.html"
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/_astro/*", "/favicon.*", "/robots.txt"]
+  }
+}
