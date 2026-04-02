@@ -80,6 +80,17 @@ jobs:
           
           echo "Checking if this matches your token source..."
 
+      - name: Build
+        run: npm --workspace=@mfalana/web run build
+        env:
+          PUBLIC_API_BASE_URL: ${{ vars.PUBLIC_API_BASE_URL }}
+
+      - name: Restructure output for base path
+        run: |
+          mkdir -p apps/web/deploy/demo/breakline-gen
+          cp -r apps/web/dist/* apps/web/deploy/demo/breakline-gen/
+          cp apps/web/dist/staticwebapp.config.json apps/web/deploy/ 2>/dev/null || true
+
       - name: Build And Deploy
         env:
           PUBLIC_API_BASE_URL: ${{ vars.PUBLIC_API_BASE_URL }}
@@ -91,8 +102,8 @@ jobs:
           ###### Repository/Build Configurations ######
           app_location: "apps/web" # App source code path
           api_location: "" # Api source code path - optional
-          output_location: "dist" # Built app content directory - optional
-          app_build_command: "npm run build" # Let Azure build it
+          output_location: "deploy" # Built app content directory
+          skip_app_build: true
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:

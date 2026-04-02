@@ -4,7 +4,7 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  base: '/',
+  base: '/demo/breakline-gen',
   integrations: [react()],
   vite: {
     server: {
