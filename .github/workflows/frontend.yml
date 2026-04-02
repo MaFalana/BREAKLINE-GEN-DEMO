@@ -90,6 +90,7 @@ jobs:
           mkdir -p apps/web/deploy/demo/breakline-gen
           cp -r apps/web/dist/* apps/web/deploy/demo/breakline-gen/
           cp apps/web/dist/staticwebapp.config.json apps/web/deploy/ 2>/dev/null || true
+          echo '<meta http-equiv="refresh" content="0;url=/demo/breakline-gen/">' > apps/web/deploy/index.html
 
       - name: Build And Deploy
         env:
