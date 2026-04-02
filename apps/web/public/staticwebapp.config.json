@@ -3,10 +3,6 @@
     {
       "route": "/demo/breakline-gen",
       "rewrite": "/index.html"
-    },
-    {
-      "route": "/demo/breakline-gen/",
-      "rewrite": "/index.html"
     }
   ],
   "navigationFallback": {
